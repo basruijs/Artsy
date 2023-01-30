@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var lat = 1;
+    var lon = 1;
+        function doWeatherThings(){
+
+        // const xhttp = new XMLHttpRequest();
+
+        let city = document.getElementById("city").value;
+        key = "8e72deef108a66e5c19d60b6727eec77";
+
+        // xhttp.open("GET", "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" + key);
+        // xhttp.send();
+        // let contentObj = JSON.parse(xhttp.responseText.weather.main);
+
+        // console.log(contentObj)
+        let lat = 3;
+        let lon = 3;
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function coords() {
+            if (xhttp.readyState === XMLHttpRequest.DONE) {
+                if (xhttp.status === 'OK' || (xhttp.status >= 200 && xhttp.status < 400)) {
+                    let contentObj = JSON.parse(xhttp.responseText);
+
+                    lat = contentObj[0].lat
+                    lon = contentObj[0].lon
+                }
+            }
+            xhttpWeather.open("GET", "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" + key + "&units=metric");
+            xhttpWeather.send();
+        }
+
+        xhttp.open("GET", "http://api.openweathermap.org/geo/1.0/direct?q=" + city + ",&appid=" + key);
+        xhttp.send();
+
+
+        const xhttpWeather = new XMLHttpRequest();
+        xhttpWeather.onreadystatechange = () => {
+
+            if (xhttpWeather.readyState === XMLHttpRequest.DONE) {
+
+                if (xhttpWeather.status === 'OK' || (xhttpWeather.status >= 200 && xhttpWeather.status < 400)) {
+                    console.log(lat + " weather1  " + lon)
+                    let contentObjWeather = JSON.parse(xhttpWeather.responseText);
+                    console.log(contentObjWeather);
+                    let weather = "none"
+                    let geckoStringHumidity = "";
+                    let geckoStringTemp = "";
+                    console.log(lat + " weather1  " + lon)
+                    if (contentObjWeather.main.humidity > 40) {
+                        geckoStringHumidity = "That's 🌧️" + (contentObjWeather.main.humidity - 40) + "% more humidity than a leopard gecko would like"
+                    }
+                    else if (contentObjWeather.main.humidity < 30) {
+                        geckoStringHumidity = "That's 🏜️" + (30 - contentObjWeather.main.humidity) + "% less humidity than a leopard gecko would like"
+                    } else {
+                        geckoStringHumidity = "A leopard gecko would be very happy in this humidity"
+                    }
+
+                    console.log(contentObjWeather.main.temp)
+                    if (contentObjWeather.main.temp > 35) {
+                        geckoStringTemp = "That's ☀️" + (contentObjWeather.main.temp - 40) + " degrees warmer than a leopard gecko would like"
+                    }
+                    else if (contentObjWeather.main.temp < 25) {
+                        geckoStringTemp = "That's ❄️" + (25 - contentObjWeather.main.temp) + " degrees colder than a leopard gecko would like"
+                    } else {
+                        geckoStringTemp = "A leopard gecko would be very happy in this temperature"
+                    }
+                    document.getElementById('weather').innerHTML =
+                        `
+                    <h2>Weather in ${city}, ${contentObjWeather.sys.country}<h2>
+                    <h4>Weather: ${contentObjWeather.weather[0].main}</h4><img class="weathericon" src="http://openweathermap.org/img/wn/${contentObjWeather.weather[0].icon}@2x.png" alt="">
+                    <p>${contentObjWeather.weather[0].description}</p><br>
+                    <h4>Humidity: ${contentObjWeather.main.humidity}%</h4>
+                        <p>${geckoStringHumidity}</p>
+                    <h4>Temperature: ${contentObjWeather.main.temp} degrees</h4>
+                        <p>${geckoStringTemp}</p>
+                        <img src="img/gecc.jpg" alt="" style="height: 200px;"><br><br>
+                    <h4>Wind</4>
+                        <p>Wind speed: ${contentObjWeather.wind.speed}</p>
+                        <img class="arrow"; src="img/red-up arrow.png" alt="" style="transform: rotate(${contentObjWeather.wind.deg}deg);";>
+                        <p>Wind direction: ${contentObjWeather.wind.deg}</p>
+                    `
+
+
+                }
+            }
+        }
+    }
+
+    function emoji(weather) {
+        switch(weather){
+            case "Rain": 
+            case "Drizzle": 
+            return "🌧️";
+            case "Clear": 
+            return "☀️";
+            case "Clouds": 
+            return "☁️";
+            default:
+                return "❓";
+        }
+
+    }
+    console.log(lat + " x " + lon);
+</script>
+<style>
+    img.arrow {
+        height: 200px;
+        margin: 0 100px;
+    }
+    img.weathericon{
+        height: 50px;
+        border-radius: 10px;
+        background-color: rgba(9, 89, 89, 0.447);
+        
+    }
+</style>
+
+<body>
+        <label for="city">City:</label>
+        <input name="city" id="city" type="text" value="" onchange="doWeatherThings()">
+    <div id="weather">
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+.slidein {
+    bottom: 10px !important;
+    filter: hue-rotate(3600deg);
+}
+
+.slideleft {
+    left: 10px !important;
+    filter: hue-rotate(3600deg);
+
+}

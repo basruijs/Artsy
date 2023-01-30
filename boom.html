@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .button-container {
+        row-gap: 10px;
+        column-gap: 10px;
+        width: 100px;
+        height: 100px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .grid-button {
+        height: 50px;
+        width: 50px;
+    }
+
+    .grid-container {
+        row-gap: 50px;
+        column-gap: 50px;
+        grid-template-rows: 200px 200px;
+        width: 90vw;
+        height: 90vh;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-items: center;
+    }
+
+    .grid-item {}
+</style>
+
+<script>
+        window.addEventListener("load", function () {
+
+        })
+
+    // Add event listener on keydown
+    document.addEventListener('keydown', (event) => {
+        var name = event.key;
+        var code = event.code;
+        name = +name
+        buttonpress(name);
+    }, false);
+
+
+    let boom = new Audio('sound/deltarune-explosion.mp3');
+    let woosh = new Audio('sound/woosh.mp3');
+    let oof = new Audio('sound/roblox-death-sound_1.mp3');
+    let honk = new Audio('sound/goose-honk.mp3')
+    let sadTrombone = new Audio('sound/sadtrombone.swf.mp3');
+
+    function buttonpress(button) {
+        let text = "";
+        switch (button) {
+            case 1: {
+                boom.currentTime = 0;
+                text = 'Boom!'
+                boom.play();
+                break;
+            }
+            case 2: {
+                text = 'Woosh!'
+                woosh.play();
+                break;
+
+            }
+            case 3: {
+                text = 'Oof!'
+                oof.play();
+                break;
+
+            }
+            case 4: {
+                text = 'Honk!'
+                honk.play();
+                break;
+
+            }
+            case 5: {
+                text = 'Sad Trombone'
+                sadTrombone.play();
+                break;
+
+            }
+            case 6: {
+                woosh.play();
+                break;
+
+            }
+            case 7: {
+                woosh.play();
+                break;
+
+            }
+            case 8: {
+                woosh.play();
+                break;
+
+            }
+            case 9: {
+                woosh.play();
+                break;
+            }
+        }
+        document.getElementById('sound').innerHTML = text;
+    }
+
+</script>
+
+<body>
+    <div class="grid-container">
+        <div></div>
+        <div>
+            <h2 id="sound">
+            </h2>
+        </div>
+        <div></div>
+
+        <div></div>
+        <div class="button-container grid-item">
+            <button onclick="buttonpress(1)" class="grid-button">1</button>
+            <button onclick="buttonpress(2)" class="grid-button">2</button>
+            <button onclick="buttonpress(3)" class="grid-button">3</button>
+            <button onclick="buttonpress(4)" class="grid-button">4</button>
+            <button onclick="buttonpress(5)" class="grid-button">5</button>
+            <button onclick="buttonpress(6)" class="grid-button">6</button>
+            <button onclick="buttonpress(7)" class="grid-button">7</button>
+            <button onclick="buttonpress(8)" class="grid-button">8</button>
+            <button onclick="buttonpress(9)" class="grid-button">9</button>
+        </div>
+        <div></div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>

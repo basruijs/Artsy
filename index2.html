@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        font-family: 'Comic Sans MS';
+    }
+     /* *:active{
+        transform: rotate(360deg) !important;
+
+     } */
+
+     html{
+        background-color: white;
+     }
+
+     .anotheruniverse{
+        width: 90vw;
+        height: 90vh;
+     }
+    .absolute-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .nav {
+        z-index: 3;
+        display: flex;
+        max-width: 100vw;
+        justify-content: space-around;
+        background-color: black;
+        color: white;
+        font-size: 1.5em;
+        position: sticky;
+        padding: 30px 0;
+        top: 0;
+    }
+
+    .ad:active{
+        transition: all 40s linear !important;
+        filter:hue-rotate(36000deg);
+    }
+
+    
+    .ad {
+        z-index: 3;
+        margin: 0 10vw;
+        width: 80vw;
+        background-color: white;
+        color: black;
+        display: flex;
+        justify-content: space-around;
+        font-size: 1.5em;
+        position: fixed;
+        padding: 30px 0;
+        bottom: 10px;
+        background-image: url("mangomovin copy.gif");
+        background-size: 100px;
+    }
+    .ad a {
+        text-decoration:none;
+        background-color: orange;
+        background-size: 100px;
+        padding: 10px;
+        border-radius: 100px;
+    }
+
+    .ad a span{
+        font-size: 30px;
+        background-image: url("rickroll-rick.gif");
+        background-blend-mode:difference;
+        background-size: 100px;
+        background-position-x: -10px;
+        -webkit-background-clip: text;
+        background-repeat: repeat;
+        -webkit-text-fill-color: transparent;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .ad button {
+        transition: all 0.1s linear !important;
+
+        position:absolute;
+        margin: 10px;
+        left:10px;
+        top: 10px;
+        height:14px;
+        width:10px;
+        padding: 0px !important;
+        text-align: center;
+        font-size: 7px;
+    }
+    .ad button:active{
+        transform: translateX(30px) translateY(40px) rotate(270deg);
+    }
+    /* .ad button:active{
+        transition: all 0s linear !important;
+
+        transform: translateY(30px);
+    } */
+
+    .ad img{
+        height: 60px;
+    }
+
+    .title {
+
+        display: flex;
+        justify-content: center;
+        font-size: 2em;
+        font-family: 'Comic Sans MS', sans-serif;
+    }
+
+    .art {
+
+        display: flex;
+        margin: 10px;
+        padding: 10px;
+        max-width: 100vw;
+        justify-content: space-around;
+    }
+
+    .art img {
+
+        margin: 10px;
+        transition: all 1s ease;
+        max-width: 200px;
+        height: 500px;
+        object-fit: cover;
+    }
+
+    .sticky {
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        width: 100px;
+        filter: opacity(20%);
+    }
+
+    .textblock {
+        transition: all 3s ease !important;
+        display: flex;
+        margin: 40px;
+        background-size: 200px;
+        padding: 5vh 5vw;
+        border-radius: 10px;
+        background-image: url("rickroll-rick.gif");
+        background-blend-mode: color-burn;
+        background-color: bisque;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    .textblock p {
+        background-color: rgba(91, 91, 224, 0.833);
+        padding: 5%;
+        border-radius: 10px;
+        color: purple;
+        font-family: "Comic Sans MS";
+    }
+
+    .textblock img {
+        transition: all 1s ease;
+
+        float: right;
+        margin: 20px;
+        border-radius: 10px;
+    }
+
+    .transparent {
+        filter: opacity(70%);
+    }
+
+    .art img:hover {
+        z-index: 2;
+        transform: scale(120%);
+        max-width: 500px;
+    }
+
+    .vaporize:hover {
+        filter: blur(1000px);
+    }
+    
+
+    .vaporize {
+        transition: all 3s ease !important;
+    }
+
+    .fade {
+        transition: all 3s ease !important;
+    }
+
+    .fade:hover{
+        rotate: 360deg;
+        opacity: 0%;
+    }
+
+    .myplanetneedsme {
+        transition: all 4s ease !important;
+    }
+
+    .myplanetneedsme:hover{
+        transform: translateY(-5000px);
+    }
+
+    .evil{
+        transition: all 3s ease !important;
+    }
+
+    .evil:hover{
+        filter: invert(100%);
+    }
+
+    .vaporeverse:hover {
+        filter: blur(0px);
+    }
+
+    .vaporeverse {
+        transition: all 3s ease !important;
+        filter: blur(100px);
+    }
+
+    .roll {
+        width: 200px;
+        height: 200px;
+        object-fit: fill;
+    }
+    .rainbow{ 
+        transition: all 20s linear !important;
+    }
+
+    .rainbow:hover{
+        filter:hue-rotate(3600deg);
+
+    }
+</style>
+<header>
+    <div class="nav">
+        <a>Informatie</a>
+        <a>Informatie</a>
+        <a>Informatie</a>
+        <a>Informatie</a>
+    </div>
+
+    <h1 class="title">De BESTE MANGO'S deze kant van de Styx Rivier!</h1>
+    <div class="art">
+        <a href="img\boiledmango.jpg"><img src="img\boiledmango.jpg" alt=""></a>
+
+        <a href="img\friedmango.jpg"><img src="img\friedmango.jpg" alt=""></a>
+
+        <a href="img\mangoart.webp"><img src="img\mangoart.webp" alt=""></a>
+        <a href="img\mangoleaf.jpg"><img src="img\mangoleaf.jpg" alt=""></a>
+
+        <a href="img\Mangomango.png"><img src="img\Mangomango.png" alt=""></a>
+        <a href="img\smashedmango.png"><img src="img\smashedmango.png" alt=""></a>
+    </div>
+</header>
+<div class="ad">
+    <button>x</button>
+    <img src="img\Mangomango.png" alt="">
+    <img src="img\Mangomango.png" alt="">
+    <a href="img\burningmango.jpg"><span><b>!hot mangoes in your area!</b></span></a> 
+    <img src="img\Mangomango.png" alt="">
+    <img src="img\Mangomango.png" alt="">
+
+</div>
+<img class="sticky" , src="img\Mangomango.png" alt="">
+
+<body>
+    <div class="textblock">
+        <div class="part">
+            <img class="evil" src="img\mustachemango.gif" alt="">
+            <p>De enige site om mango's te bekijken, nu zonder reclame!*
+                Mangoes zijn mangoes die mango achtig zijn met mango
+                kwaliteiten en het zijn fruit en mangoes en daardoor zijn het mangoes</p>
+
+            <p>De mango (Mangifera indica) of manga (Surinaams-Nederlands: manja,
+                [ˈmaɲja], soms [ˈmaɲjə]) is de commercieel belangrijkste soort
+                uit het geslacht Mangifera[1] en is na de banaan het belangrijkste
+                fruit uit de tropen. De groenblijvende boom kan een hoogte van
+                40 m bereiken. De boom heeft een dichte, brede kruin. De afwisselend
+                geplaatste bladeren zijn leerachtig, glad, glanzend, donkergroen,
+                gaafrandig en hebben een ovale, toegespitste vorm. Het blad is
+                15-30 cm lang en tot 3,5 cm breed. De bladsteel is 2-6 cm lang.
+                De eindstandige, vertakte bloeiwijzen kunnen tot 100.000, enkele
+                millimeters grote, gelige of rozige bloemetjes bevatten. Van deze bloemen
+                wordt maar een klein deel bestoven en rijpt een nog kleiner deel uit tot volwassen vruchten</p>
+
+        </div>
+
+
+    </div>
+
+    <div class="textblock">
+        <p>Kijk naar de eerste verdwijnende mango's</p>
+        <img class="vaporize" style="height: 200px;" src="img\mangomovin.gif" alt="">
+        <img class="fade" style="height: 200px;" src="img\Mangomango.png" alt="">
+        <img class="myplanetneedsme" style="height: 200px;" src="img\mangoleaf.jpg" alt="">
+
+    </div>
+
+    <div class="textblock">
+        <p>De mango vulkaan op Mt. Mango. De schuilplaats van de mangodraak
+            <img class="rainbow" src="img\mango_dragon.png" alt="" style="height: 400px;">
+        </p>
+        <img class="vaporeverse" src="img\Mangovulcano.png" alt="">
+
+    </div>
+
+    <div class="textblock">
+        <iframe class="anotheruniverse" src="index3.html" title="description"></iframe>
+
+    </div>
+
+    <div class="textblock">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/yE0NGXZ_HBs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>De enige site om mango's te bekijken, nu zonder reclame!*</p>
+    </div>
+
+</body>
+
+</html>

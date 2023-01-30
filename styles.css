@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    font-family: 'Comic Sans MS';
+}
+
+/* *:active{
+    transform: rotate(360deg) !important;
+
+ } */
+
+html {
+    overflow-x: hidden;
+    background-color: white;
+}
+
+.anotheruniverse {
+    width: 90vw;
+    height: 90vh;
+}
+
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nav {
+    z-index: 3;
+    display: flex;
+    max-width: 100vw;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    font-size: 1.5em;
+    position: sticky;
+    padding: 30px 0;
+    top: 0;
+}
+
+/* .ad:active{
+    filter:hue-rotate(36000deg);
+} */
+
+.sidead {
+    border-style: dotted;
+    border-width: 10px;
+    border-color: blue;
+    background-image: url("mangomovin copy.gif");
+    background-size: 100px;
+    transition: all 1.5s ease !important;
+    border-radius: 10px;
+    z-index: 3;
+    position: fixed;
+    width: 15vw;
+    padding: 5px;
+    top: 20vh;
+    left: -1000px;
+    background-color: red;
+    font-size: large;
+    text-align: center;
+
+}
+
+.sidead h2 {
+    font-size: 50px;
+    padding: 0px;
+    border-radius: 10px;
+    background-color: rgba(0, 255, 255, 0.308);
+
+}
+
+.sidead p {
+    background-blend-mode:exclusion;
+    filter: hue-rotate(180deg);
+    padding: 3px;
+    border-radius: 10px;
+    background-image: url("mangomovin copy.gif");
+    background-size: 10px;
+    padding: 0px;
+}
+
+.sidead a {
+    background-blend-mode:exclusion;
+    padding: 3px;
+    border-radius: 10px;
+    padding: 0px;
+    color: cyan;
+}
+
+.sidead h3 {
+    font-size: 40px;
+}
+
+
+.ad {
+    transition: all 0.5s ease !important;
+    z-index: 3;
+    margin: 0 10vw;
+    width: 80vw;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5em;
+    position: fixed;
+    padding: 30px 0;
+    bottom: -1000px;
+    background-image: url("mangomovin copy.gif");
+    background-size: 100px;
+}
+
+.ad a {
+    text-decoration: none;
+    background-color: orange;
+    background-size: 100px;
+    padding: 10px;
+    border-radius: 100px;
+}
+
+.ad a span {
+    font-size: 30px;
+    background-image: url("rickroll-rick.gif");
+    background-blend-mode: difference;
+    background-size: 100px;
+    background-position-x: -10px;
+    -webkit-background-clip: text;
+    background-repeat: repeat;
+    -webkit-text-fill-color: transparent;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ad button {
+    transition: all 0.1s linear !important;
+
+    position: absolute;
+    margin: 10px;
+    left: 10px;
+    top: 10px;
+    height: 14px;
+    width: 10px;
+    padding: 0px !important;
+    text-align: center;
+    font-size: 7px;
+}
+
+.ad button:active {
+    transform: translateX(30px) translateY(40px) rotate(270deg);
+}
+
+/* .ad button:active{
+    transition: all 0s linear !important;
+
+    transform: translateY(30px);
+} */
+
+.ad img {
+    height: 60px;
+}
+
+.title {
+
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+.art {
+
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    max-width: 100vw;
+    justify-content: space-around;
+}
+
+.art img {
+
+    margin: 10px;
+    transition: all 1s ease;
+    max-width: 200px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.sticky {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 100px;
+    filter: opacity(20%);
+}
+
+.textblock {
+    transition: all 3s ease !important;
+    display: flex;
+    margin: 40px;
+    background-size: 200px;
+    padding: 5vh 5vw;
+    border-radius: 10px;
+    background-image: url("rickroll-rick.gif");
+    background-blend-mode: color-burn;
+    background-color: bisque;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.textblock p {
+    background-color: rgba(91, 91, 224, 0.833);
+    padding: 5%;
+    border-radius: 10px;
+    color: purple;
+    font-family: "Comic Sans MS";
+}
+
+.textblock img {
+    transition: all 1s ease;
+
+    float: right;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.transparent {
+    filter: opacity(70%);
+}
+
+.art img:hover {
+    z-index: 2;
+    transform: scale(120%);
+    max-width: 500px;
+}
+
+.vaporize:hover {
+    filter: blur(1000px);
+}
+
+
+.vaporize {
+    transition: all 3s ease !important;
+}
+
+.fade {
+    transition: all 3s ease !important;
+}
+
+.fade:hover {
+    rotate: 360deg;
+    opacity: 0%;
+}
+
+.myplanetneedsme {
+    transition: all 4s ease !important;
+}
+
+.myplanetneedsme:hover {
+    transform: translateY(-5000px);
+}
+
+.evil {
+    transition: all 3s ease !important;
+}
+
+.evil:hover {
+    filter: invert(100%);
+}
+
+.vaporeverse:hover {
+    filter: blur(0px);
+}
+
+.vaporeverse {
+    transition: all 3s ease !important;
+    filter: blur(100px);
+}
+
+.roll {
+    width: 200px;
+    height: 200px;
+    object-fit: fill;
+}
+
+.rainbow {
+    transition: all 20s linear !important;
+}
+
+.rainbow:hover {
+    filter: hue-rotate(3600deg);
+
+}

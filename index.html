@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+
+</style>
+<script>
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+        }
+    }
+
+    function showPosition(position) {
+        console.log(position);
+    }
+
+    function notifyMe() {
+        if (!("Notification" in window)) {
+            // Check if the browser supports notifications
+            alert("This browser does not support desktop notification");
+        } else if (Notification.permission === "granted") {
+            // Check whether notification permissions have already been granted;
+            // if so, create a notification
+            var title = "JavaScript Jeep";
+            icon = "img\mangoleaf.jpg"
+            var body = "Message to be displayed";
+            var notification = new Notification('Title', { body, icon });
+            // …
+        } else if (Notification.permission !== "denied") {
+            // We need to ask the user for permission
+            Notification.requestPermission().then((permission) => {
+                // If the user accepts, let's create a notification
+                if (permission === "granted") {
+                    var title = "JavaScript Jeep";
+            icon = "img/mangoleaf.jpg"
+            var body = "Message to be displayed";
+            var notification = new Notification('Title', { body, icon });
+                }
+            });
+        }
+    }
+
+    function notifyDisplay(){
+        var title = "JavaScript Jeep";
+            icon = "img/mangoleaf.jpg"
+            var body = "Message to be displayed";
+            var notification = new Notification('Title', { body, icon });
+            alert(notification.title);
+            alert(notification.body);
+
+    }
+    // Get HTML head element
+    var head = document.getElementsByTagName('HEAD')[0];
+
+    // Create new link Element
+    var link = document.createElement('link');
+
+    // set the attributes for link element
+    link.rel = 'stylesheet';
+
+    link.type = 'text/css';
+
+    link.href = 'slidin.css';
+
+    // Append link element to HTML head
+    window.addEventListener("load", function () {
+        let i = 1;
+        if (i == 0) {
+            i++
+        } else {
+            console.log("page is fully loaded");
+            head.appendChild(link);
+            notifyMe();
+            getLocation();
+        }
+    })
+
+</script>
+<header>
+    <div class="nav">
+        <a>Informatie</a>
+        <a>Informatie</a>
+        <a>Informatie</a>
+        <a>Informatie</a>
+    </div>
+
+    <h1 class="title">De BESTE MANGO'S deze kant van de Styx Rivier!</h1>
+    <div class="art">
+        <a href="img\boiledmango.jpg"><img src="img\boiledmango.jpg" alt=""></a>
+
+        <a href="img\friedmango.jpg"><img src="img\friedmango.jpg" alt=""></a>
+
+        <a href="img\mangoart.webp"><img src="img\mangoart.webp" alt=""></a>
+        <a href="img\mangoleaf.jpg"><img src="img\mangoleaf.jpg" alt=""></a>
+
+        <a href="img\Mangomango.png"><img src="img\Mangomango.png" alt=""></a>
+        <a href="img\smashedmango.png"><img src="img\smashedmango.png" alt=""></a>
+    </div>
+</header>
+<div class="slidein ad">
+    <button>x</button>
+    <img src="img\Mangomango.png" alt="">
+    <img src="img\Mangomango.png" alt="">
+    <a href="img\burningmango.jpg"><span><b>!hot mangoes in your area!</b></span></a>
+    <img src="img\Mangomango.png" alt="">
+    <img src="img\Mangomango.png" alt="">
+</div>
+<div class="sidead slideleft">
+    <h2>Now's your chance!</h2>
+    <p>Our millionth visitor!</p>
+    <a href="index copy.html">Click here to claim your prize!</a>
+    <h3>Wow!!!</h3>
+    <p>#legitiem</p>
+</div>
+<img class="sticky" , src="img\Mangomango.png" alt="">
+
+<body>
+    <div class="textblock">
+        <div class="part">
+            <img class="evil" src="img\mustachemango.gif" alt="" onclick="notifyDisplay()">
+            <p>De enige site om mango's te bekijken, nu zonder reclame!*
+                Mangoes zijn mangoes die mango achtig zijn met mango
+                kwaliteiten en het zijn fruit en mangoes en daardoor zijn het mangoes</p>
+
+            <p>De mango (Mangifera indica) of manga (Surinaams-Nederlands: manja,
+                [ˈmaɲja], soms [ˈmaɲjə]) is de commercieel belangrijkste soort
+                uit het geslacht Mangifera[1] en is na de banaan het belangrijkste
+                fruit uit de tropen. De groenblijvende boom kan een hoogte van
+                40 m bereiken. De boom heeft een dichte, brede kruin. De afwisselend
+                geplaatste bladeren zijn leerachtig, glad, glanzend, donkergroen,
+                gaafrandig en hebben een ovale, toegespitste vorm. Het blad is
+                15-30 cm lang en tot 3,5 cm breed. De bladsteel is 2-6 cm lang.
+                De eindstandige, vertakte bloeiwijzen kunnen tot 100.000, enkele
+                millimeters grote, gelige of rozige bloemetjes bevatten. Van deze bloemen
+                wordt maar een klein deel bestoven en rijpt een nog kleiner deel uit tot volwassen vruchten</p>
+
+        </div>
+
+
+    </div>
+
+    <div class="textblock">
+        <p>Kijk naar de eerste verdwijnende mango's</p>
+        <img class="vaporize" style="height: 200px;" src="img\mangomovin.gif" alt="">
+        <img class="fade" style="height: 200px;" src="img\Mangomango.png" alt="">
+        <img class="myplanetneedsme" style="height: 200px;" src="img\mangoleaf.jpg" alt="">
+
+    </div>
+
+    <div class="textblock">
+        <p>De mango vulkaan op Mt. Mango. De schuilplaats van de mangodraak
+            <img class="rainbow" src="img\untitled.png" alt="" style="height: 400px;">
+        </p>
+        <img class="vaporeverse" src="img\Mangovulcano.png" alt="">
+
+    </div>
+
+    <div class="textblock">
+        <iframe class="anotheruniverse" src="index2.html" title="description" style="z-index: 4;"></iframe>
+
+    </div>
+
+    <div class="textblock">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/yE0NGXZ_HBs" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen style="z-index: 4;"></iframe>
+        <p>De enige site om mango's te bekijken, nu zonder reclame!*</p>
+    </div>
+
+</body>
+
+</html>
